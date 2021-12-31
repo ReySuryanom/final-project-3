@@ -1877,7 +1877,7 @@ babel-plugin-dynamic-import-node@^2.3.3:
 
 babel-plugin-module-resolver@^4.1.0:
   version "4.1.0"
-  resolved "https://registry.npmjs.org/babel-plugin-module-resolver/-/babel-plugin-module-resolver-4.1.0.tgz"
+  resolved "https://registry.yarnpkg.com/babel-plugin-module-resolver/-/babel-plugin-module-resolver-4.1.0.tgz#22a4f32f7441727ec1fbf4967b863e1e3e9f33e2"
   integrity sha512-MlX10UDheRr3lb3P0WcaIdtCSRlxdQsB1sBqL7W0raF070bGl1HQQq5K3T2vf2XAYie+ww+5AKC/WrkjRO2knA==
   dependencies:
     find-babel-config "^1.2.0"
@@ -1909,6 +1909,11 @@ babel-plugin-polyfill-regenerator@^0.3.0:
   integrity sha512-dhAPTDLGoMW5/84wkgwiLRwMnio2i1fUe53EuvtKMv0pn2p3S8OCoV1xAzfJPl0KOX7IB89s2ib85vbYiea3jg==
   dependencies:
     "@babel/helper-define-polyfill-provider" "^0.3.0"
+
+babel-plugin-react-native-web@^0.17.5:
+  version "0.17.5"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-native-web/-/babel-plugin-react-native-web-0.17.5.tgz#4bce51a20d21839f20506ef184bd5743a2c6d067"
+  integrity sha512-UWl0E9FGYVr5Gj7lbVc4DFy8pTgc6wIXBa0rDvPGxx3OmcKwcdvCfDn9mLuh7JesYfh+wLjp01fwPplMus7IPw==
 
 babel-plugin-react-native-web@~0.17.1:
   version "0.17.5"
@@ -5603,7 +5608,7 @@ react-native-codegen@^0.0.7:
 
 react-native-web@^0.17.5:
   version "0.17.5"
-  resolved "https://registry.npmjs.org/react-native-web/-/react-native-web-0.17.5.tgz"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.17.5.tgz#2c27452b4654fb098c3c412cb04c379add1015a6"
   integrity sha512-pdieIZi2/YeVTaOuIaeaLC6FMkk8h3pvPNruedH+6cWiE15Oz6BGjJ+5IafdXEyiipb1Y0+QuecW81fa3DVM4g==
   dependencies:
     array-find-index "^1.0.2"
