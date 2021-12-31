@@ -1,27 +1,23 @@
 import { Provider } from 'react-redux';
-import { Alert, Button, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import store from './src/app/store';
+import { HomeScreen, SearchResultScreen } from './src/screens';
 
 export default function App() {
+  const Stack = createNativeStackNavigator();
+
   return (
-    <Provider>
-      <View style={styles.container}>
-        <Text style={{ color: 'white' }}>WOYYY ini gwFFFFFFFFFFFFFFFf</Text>
-        <Button
-          title="Test"
-          onPress={() => {
-            Alert.alert('Woy', 'antum ngapain', [{ text: 'Back', style: 'destructive' }]);
-          }}
-        />
-      </View>
+    <Provider store={store}>
+      <NavigationContainer>
+        <SafeAreaProvider>
+          <Stack.Navigator>
+            <Stack.Screen name="HomeScreen" component={HomeScreen} />
+            <Stack.Screen name="SearchResultScreen" component={SearchResultScreen} />
+          </Stack.Navigator>
+        </SafeAreaProvider>
+      </NavigationContainer>
     </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'black',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
