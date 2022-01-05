@@ -1,12 +1,21 @@
+import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AppLoading from 'expo-app-loading';
+import { useFonts } from 'expo-font';
 import store from './src/app/store';
 import { HomeScreen, SearchResultScreen } from './src/screens';
+import { ubuntuFonts } from './src/common/helpers';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
+  const [fontsLoaded] = useFonts(ubuntuFonts);
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
 
   return (
     <Provider store={store}>
