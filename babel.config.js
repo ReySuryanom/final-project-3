@@ -4,14 +4,6 @@ module.exports = function (api) {
   const presets = ['babel-preset-expo'];
   const plugins = [
     [
-      'module-resolver',
-      {
-        alias: {
-          '^react-native$': 'react-native-web',
-        },
-      },
-    ],
-    [
       'module:react-native-dotenv',
       {
         moduleName: 'react-native-dotenv',
