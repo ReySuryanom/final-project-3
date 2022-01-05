@@ -1,3 +1,4 @@
 import BottomTab from './BottomTab';
+import CustomInput from './CustomInput';
 
-export { BottomTab };
+export { BottomTab, CustomInput };

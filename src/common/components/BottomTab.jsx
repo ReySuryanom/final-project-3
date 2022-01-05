@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { View, TouchableOpacity } from 'react-native';
-import { Icon } from 'react-native-elements';
 import tw from 'twrnc';
+import { useState } from 'react';
+import { View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import { Icon } from 'react-native-elements';
 import { tabList } from '../constant';
 
 export default function BottomTab({ index = 0 }) {
   const [tab, setTab] = useState(index);
 
   return (
-    <View style={tw.style(`flex-row justify-evenly items-scretch bg-[#F7F7F9]`, { flex: 0.1 })}>
+    <View style={tw.style(`flex-row justify-evenly bg-[#F7F7F9]`, { flex: 0.09 })}>
       {tabList.map((item, idx) => {
         const isActiveTab = tab === idx;
 
@@ -19,8 +19,8 @@ export default function BottomTab({ index = 0 }) {
             key={item}
           >
             <Icon
-              containerStyle={{ marginVertical: 'auto' }}
-              size={25}
+              size={30}
+              containerStyle={tw`my-auto`}
               name={`${isActiveTab ? item : item.concat('-outline')}`}
               type="ionicon"
               color={`${isActiveTab ? '#2C9CDB' : '#98A1A8'}`}
