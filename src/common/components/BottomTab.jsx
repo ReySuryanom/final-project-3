@@ -1,6 +1,6 @@
 import tw from 'twrnc';
 import { useState } from 'react';
-import { View, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { tabList } from '../constant';
 
@@ -14,6 +14,7 @@ export default function BottomTab({ index = 0 }) {
 
         return (
           <TouchableOpacity
+            activeOpacity={0.8}
             style={tw`border-[#2C9CDB] ${isActiveTab && 'border-t-2'}`}
             onPress={() => setTab(idx)}
             key={item}
