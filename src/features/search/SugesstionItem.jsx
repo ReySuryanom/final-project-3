@@ -1,7 +1,7 @@
 import tw from 'twrnc';
 import { View, Text } from 'react-native';
 
-export default function SugesstionItem({ list = [] }) {
+export default function SugesstionItem({ list }) {
   if (list.length === 1) {
     return (
       <View>
@@ -9,6 +9,7 @@ export default function SugesstionItem({ list = [] }) {
       </View>
     );
   }
+  
   return (
     <View>
       <Text style={tw`font-bold text-red-500`}>{list.shift()}</Text>
