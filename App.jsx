@@ -14,13 +14,18 @@ export default function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />;
-  } 
+  }
 
   return (
     <Provider store={store}>
       <NavigationContainer>
         <SafeAreaProvider>
-          <Stack.Navigator>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: '#D32F2F' },
+              headerTintColor: 'white',
+            }}
+          >
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="SearchResultScreen" component={SearchResultScreen} />
           </Stack.Navigator>

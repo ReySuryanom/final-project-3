@@ -8,14 +8,14 @@ export default function BottomTab({ index = 0 }) {
   const [tab, setTab] = useState(index);
 
   return (
-    <View style={tw.style(`flex-row justify-evenly bg-[#F7F7F9]`, { flex: 0.09 })}>
+    <View style={tw.style(`flex-row justify-evenly bg-[#F7F7F9]`, { flex: 0.07 })}>
       {tabList.map((item, idx) => {
         const isActiveTab = tab === idx;
 
         return (
           <TouchableOpacity
             activeOpacity={0.8}
-            style={tw`border-[#2C9CDB] ${isActiveTab && 'border-t-2'}`}
+            style={tw`border-[#2C9CDB] ${isActiveTab && 'border-t-4'}`}
             onPress={() => setTab(idx)}
             key={item}
           >
