@@ -1,10 +1,12 @@
 import tw from 'twrnc';
+import { useNavigation } from '@react-navigation/native';
 import { View, TouchableOpacity, Button } from 'react-native';
-import { Icon } from 'react-native-elements';
 import { CustomInput } from '../../common/components';
 import MyAutocompleteInput from './MyAutocompleteInput';
 
 export default function SearchFormInput() {
+  const navigation = useNavigation();
+
   return (
     <View style={tw.style(`border-0 shadow-lg m-5 rounded-3xl overflow-hidden p-5 bg-white`)}>
       <MyAutocompleteInput />
@@ -31,7 +33,11 @@ export default function SearchFormInput() {
         iconType="ionicon"
       />
       <TouchableOpacity style={tw.style(`overflow-hidden my-4 mb-0 rounded-md font-bold`)}>
-        <Button title="Search" color="#156BC1" />
+        <Button
+          title="Search"
+          color="#2C9CDB"
+          onPress={() => navigation.navigate('SearchResultScreen')}
+        />
       </TouchableOpacity>
     </View>
   );

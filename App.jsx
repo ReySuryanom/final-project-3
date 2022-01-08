@@ -22,7 +22,7 @@ export default function App() {
         <SafeAreaProvider>
           <Stack.Navigator
             screenOptions={{
-              headerStyle: { backgroundColor: '#D32F2F' },
+              headerStyle: { backgroundColor: '#2C9CDB' },
               headerTintColor: 'white',
             }}
           >

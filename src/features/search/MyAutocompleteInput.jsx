@@ -31,7 +31,7 @@ export default function MyAutocompleteInput() {
         containerStyle={tw`flex-1`}
         inputContainerStyle={tw`border-0`}
         placeholder="e.g. Jakarta"
-        placeholderTextColor="#156BC1"
+        placeholderTextColor="#919294"
         data={data}
         value={query}
         onChangeText={(text) => setQuery(text)}
