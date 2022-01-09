@@ -1,5 +1,5 @@
-import BottomTab from './BottomTab';
+import CustomHeader from './CustomHeader';
 import CustomInput from './CustomInput';
 import Separator from './Separator';
 
-export { BottomTab, CustomInput, Separator };
+export { CustomInput, Separator, CustomHeader };

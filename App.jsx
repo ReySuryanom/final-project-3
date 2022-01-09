@@ -1,15 +1,22 @@
 import { Provider } from 'react-redux';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
+import { Text, View } from 'react-native';
 import store from './src/app/store';
-import { HomeScreen, SearchResultScreen } from './src/screens';
-import { ubuntuFonts } from './src/common/helpers';
+import { initializeTabBarIcon, ubuntuFonts } from './src/common/helpers';
+import {
+  FavoriteStackScreen,
+  HomeStackScreen,
+  ProfileStackScreen,
+  SettingsStackScreen,
+} from './src/navigations';
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
-  const Stack = createNativeStackNavigator();
   const [fontsLoaded] = useFonts(ubuntuFonts);
 
   if (!fontsLoaded) {
@@ -20,7 +27,10 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <SafeAreaProvider>
-          <Stack.Navigator
+          <View>
+            <Text>F</Text>
+          </View>
+          {/* <Stack.Navigator
             screenOptions={{
               headerStyle: { backgroundColor: '#2C9CDB' },
               headerTintColor: 'white',
@@ -28,7 +38,13 @@ export default function App() {
           >
             <Stack.Screen name="HomeScreen" component={HomeScreen} />
             <Stack.Screen name="SearchResultScreen" component={SearchResultScreen} />
-          </Stack.Navigator>
+          </Stack.Navigator> */}
+          <Tab.Navigator screenOptions={initializeTabBarIcon}>
+            <Tab.Screen name="HomeTab" component={HomeStackScreen} />
+            <Tab.Screen name="FavoriteTab" component={FavoriteStackScreen} />
+            <Tab.Screen name="ProfileTab" component={ProfileStackScreen} />
+            <Tab.Screen name="SettingsTab" component={SettingsStackScreen} />
+          </Tab.Navigator>
         </SafeAreaProvider>
       </NavigationContainer>
     </Provider>

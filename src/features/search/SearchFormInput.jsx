@@ -4,7 +4,7 @@ import { View, TouchableOpacity, Button } from 'react-native';
 import { CustomInput } from '../../common/components';
 import MyAutocompleteInput from './MyAutocompleteInput';
 
-export default function SearchFormInput() {
+export default function SearchFormInput({ searchButton }) {
   const navigation = useNavigation();
 
   return (
@@ -32,13 +32,11 @@ export default function SearchFormInput() {
         iconName="person"
         iconType="ionicon"
       />
-      <TouchableOpacity style={tw.style(`overflow-hidden my-4 mb-0 rounded-md font-bold`)}>
-        <Button
-          title="Search"
-          color="#2C9CDB"
-          onPress={() => navigation.navigate('SearchResultScreen')}
-        />
-      </TouchableOpacity>
+      {searchButton && (
+        <TouchableOpacity style={tw`overflow-hidden my-4 mb-0 rounded-md font-bold`}>
+          <Button title="Search" color="#2C9CDB" onPress={() => navigation.navigate('Hotels')} />
+        </TouchableOpacity>
+      )}
     </View>
   );
 }

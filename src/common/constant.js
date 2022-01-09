@@ -12,6 +12,11 @@ const config = (query) => ({
   },
 });
 
-export const tabList = ['search', 'heart', 'person', 'settings'];
+export const stackScreenStyle = {
+  headerStyle: { backgroundColor: '#2C9CDB' },
+  headerTintColor: 'white',
+  headerTitleAlign: 'center',
+  headerTitleStyle: { fontSize: 25 },
+};
 
 export default config;
