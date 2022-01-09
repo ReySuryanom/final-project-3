@@ -1,15 +1,17 @@
-import { View, Text, Image } from 'react-native';
+import { TouchableOpacity, Image } from 'react-native';
 import tw from 'twrnc';
+import { MyText } from '../../common/components';
 
 export default function City({ city, image }) {
   return (
-    <View style={tw`relative overflow-hidden`}>
-      <Image style={tw`w-44 h-44 rounded-2xl`} source={{ uri: image }} />
-      <Text
-        style={tw`font-bold text-white text-2xl absolute bottom-0 pb-1 pl-2.5 w-full rounded-b-2xl`}
+    <TouchableOpacity style={tw`relative`} activeOpacity={0.5}>
+      <Image style={tw`w-56 h-56 rounded-3xl`} source={{ uri: image }} />
+      <MyText
+        style="text-white text-2xl absolute bottom-0 pb-2 pl-5 w-full rounded-b-2xl"
+        variant="bold"
       >
         {city}
-      </Text>
-    </View>
+      </MyText>
+    </TouchableOpacity>
   );
 }

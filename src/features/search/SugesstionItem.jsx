@@ -1,19 +1,26 @@
 import tw from 'twrnc';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { MyText } from '../../common/components';
 
 export default function SugesstionItem({ list }) {
   if (list.length === 1) {
     return (
       <View>
-        <Text style={tw`font-bold text-red-500`}>{list[0]}</Text>
+        <MyText style="text-red-500" variant="bold">
+          {list[0]}
+        </MyText>
       </View>
     );
   }
-  
+
   return (
     <View>
-      <Text style={tw`font-bold text-red-500`}>{list.shift()}</Text>
-      <Text style={tw`font-thin text-black`}>{list.shift().trim() + list}</Text>
+      <MyText style={tw`text-red-500`} variant="bold">
+        {list.shift()}
+      </MyText>
+      <MyText style={tw`text-black`} variant="light">
+        {list.shift().trim() + list}
+      </MyText>
     </View>
   );
 }

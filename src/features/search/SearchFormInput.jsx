@@ -8,7 +8,7 @@ export default function SearchFormInput({ searchButton }) {
   const navigation = useNavigation();
 
   return (
-    <View style={tw.style(`border-0 shadow-lg m-5 rounded-3xl overflow-hidden p-5 bg-white`)}>
+    <View style={tw.style(`border-0 shadow-lg rounded-3xl p-5 bg-white`)}>
       <MyAutocompleteInput />
       <View style={tw`flex-row justify-between`}>
         <CustomInput

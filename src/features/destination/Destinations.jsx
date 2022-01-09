@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unstable-nested-components */
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import tw from 'twrnc';
-import { Separator } from '../../common/components';
+import { MyText, Separator } from '../../common/components';
 import City from './City';
 
 const data = [
@@ -29,8 +29,10 @@ const data = [
 
 function Destinations({ category }) {
   return (
-    <View style={tw`mb-5`}>
-      <Text style={tw`font-bold text-[#282828] text-2xl uppercase`}>{category} Destinations</Text>
+    <View style={tw`mt-5`}>
+      <MyText style="text-[#282828] text-3xl capitalize" variant="bold">
+        {category} Destinations
+      </MyText>
       <FlatList
         style={tw`py-2`}
         data={data}
