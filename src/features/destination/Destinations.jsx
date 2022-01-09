@@ -27,7 +27,7 @@ const data = [
   },
 ];
 
-function Destinations({ category }) {
+export default function Destinations({ category }) {
   return (
     <View style={tw`mt-5`}>
       <MyText style="text-[#282828] text-3xl capitalize" variant="bold">
@@ -43,5 +43,3 @@ function Destinations({ category }) {
     </View>
   );
 }
-
-export default Destinations;

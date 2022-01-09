@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 import { FlatList, View } from 'react-native';
 import tw from 'twrnc';
 import { Separator } from '../common/components';
@@ -33,13 +34,13 @@ const data = [
 
 export default function SearchResultScreen() {
   return (
-    <View style={tw`flex-1 p-5`}>
+    <View style={tw`flex-1 pb-5`}>
       <View style={{ flex: 0.965 }}>
-        <SearchFormInput />
+        <SearchFormInput style="mx-5 mt-5" />
         <FlatList
           data={data}
-          style={tw`mt-5`}
-          // eslint-disable-next-line react/no-unstable-nested-components
+          contentContainerStyle={tw`p-5 pt-0`}
+          style={tw.style(`mt-5`, { overflow: 'visible' })}
           ItemSeparatorComponent={() => <Separator vertical />}
           renderItem={({ item }) => (
             <Hotel
