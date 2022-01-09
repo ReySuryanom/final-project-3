@@ -1,6 +1,7 @@
 import tw from 'twrnc';
-import { Text, View, TextInput } from 'react-native';
+import { View, TextInput } from 'react-native';
 import { Icon } from 'react-native-elements';
+import MyText from './MyText';
 
 export default function CustomInput({
   style,
@@ -13,9 +14,7 @@ export default function CustomInput({
 }) {
   return (
     <View style={{ marginVertical: 5, ...style }}>
-      <Text style={tw.style(`text-2xl mb-2 text-[#282828]`, { fontFamily: 'ubuntu-medium' })}>
-        {label}
-      </Text>
+      <MyText style="text-2xl mb-2 text-[#282828]">{label}</MyText>
       <View
         style={tw`border overflow-hidden border-[#C1C6CC] rounded-md flex-row px-3 ${
           !children && 'py-2'

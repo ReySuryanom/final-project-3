@@ -16,7 +16,7 @@ export const stackScreenStyle = {
   headerStyle: { backgroundColor: '#2C9CDB' },
   headerTintColor: 'white',
   headerTitleAlign: 'center',
-  headerTitleStyle: { fontSize: 25 },
+  headerTitleStyle: { fontSize: 25, fontFamily: 'ubuntu-bold' },
 };
 
 export default config;
