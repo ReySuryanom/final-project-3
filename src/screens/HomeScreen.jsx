@@ -5,10 +5,10 @@ import { Destinations } from '../features/destination';
 
 export default function HomeScreen() {
   return (
-    <View style={tw`flex-1 relative bg-white`}>
-      <View style={{ flex: 0.93 }}>
+    <View style={tw`flex-1 p-5`}>
+      <View style={{ flex: 0.965 }}>
         <SearchFormInput searchButton />
-        <ScrollView style={tw`bg-white px-5`}>
+        <ScrollView>
           <Destinations category="Top" />
           <Destinations category="Popular" />
         </ScrollView>

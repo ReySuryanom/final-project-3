@@ -16,6 +16,7 @@
   "rules": {
     "no-console": "warn",
     "react/prop-types": "off",
+    "react/style-prop-object": "off",
     "no-param-reassign": "off",
     "react/react-in-jsx-scope": "off",
     "no-use-before-define": ["error", { "variables": false }]
