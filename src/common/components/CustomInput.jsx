@@ -14,7 +14,7 @@ export default function CustomInput({
 }) {
   return (
     <View style={{ marginVertical: 5, ...style }}>
-      <MyText style="text-2xl mb-2 text-[#282828]">{label}</MyText>
+      {label && <MyText style="text-2xl mb-2 text-[#282828]">{label}</MyText>}
       <View
         style={tw`border overflow-hidden border-[#C1C6CC] rounded-md flex-row px-3 ${
           !children && 'py-2'

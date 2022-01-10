@@ -4,7 +4,7 @@ import { View, TouchableOpacity, Button } from 'react-native';
 import { CustomInput } from '../../common/components';
 import MyAutocompleteInput from './MyAutocompleteInput';
 
-export default function SearchFormInput({ style, searchButton }) {
+export default function SearchFormInput({ searchButton, style = '' }) {
   const navigation = useNavigation();
 
   return (
