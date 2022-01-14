@@ -40,5 +40,3 @@ export const initializeTabBarIcon = ({ route }) => ({
   tabBarActiveTintColor: '#2C9CDB',
   tabBarInactiveTintColor: 'gray',
 });
-
-export default {};

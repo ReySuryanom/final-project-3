@@ -4,12 +4,15 @@ import { Icon } from 'react-native-elements';
 import MyText from './MyText';
 
 export default function CustomInput({
+  value,
+  setValue,
   style,
   label,
   placeholder,
   iconName,
   iconType,
   children,
+  lock,
   type = 'default',
 }) {
   return (
@@ -35,6 +38,9 @@ export default function CustomInput({
             placeholderTextColor="#919294"
             placeholder={placeholder}
             keyboardType={type}
+            value={value}
+            onChangeText={setValue}
+            secureTextEntry={lock}
           />
         )}
       </View>

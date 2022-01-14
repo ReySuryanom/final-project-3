@@ -1,21 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  query: false,
+  city: null,
+  date: { checkIn: null, checkOut: null },
+  guests: null,
 };
 
 export const searchSlice = createSlice({
   name: 'search',
   initialState,
   reducers: {
-    userLogin: (state) => {
-      state.isUserLoggedIn = true;
-    },
-    userLogout: (state) => {
-      state.isUserLoggedIn = false;
+    postSearch: (state, action) => {
+      state = action;
     },
   },
 });
 
-export const { userLogin, userLogout } = searchSlice.actions;
+export const { userLogin } = searchSlice.actions;
 export default searchSlice.reducer;
