@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unstable-nested-components */
-import { FlatList, View } from 'react-native';
 import tw from 'twrnc';
+import { FlatList, View } from 'react-native';
 import { MyText, Separator } from '../../common/components';
 import City from './City';
 

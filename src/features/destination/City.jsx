@@ -1,5 +1,5 @@
-import { TouchableOpacity, Image } from 'react-native';
 import tw from 'twrnc';
+import { TouchableOpacity, Image } from 'react-native';
 import { MyText } from '../../common/components';
 
 export default function City({ city, image }) {

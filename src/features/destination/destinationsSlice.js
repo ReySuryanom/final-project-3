@@ -15,7 +15,4 @@ export const hotelSlice = createSlice({
 });
 
 export const { setHotels } = hotelSlice.actions;
-
-export const selectHotels = (state) => state.hotel.hotels;
-
 export default hotelSlice.reducer;
