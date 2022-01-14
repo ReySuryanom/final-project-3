@@ -1,14 +1,14 @@
 import tw from 'twrnc';
+import AutocompleteInput from 'react-native-autocomplete-input';
 import { useCallback, useMemo, useState } from 'react';
 import { TouchableOpacity } from 'react-native';
-import AutocompleteInput from 'react-native-autocomplete-input';
 import { useDispatch } from 'react-redux';
 import SugesstionItem from './SugesstionItem';
-import { CustomInput } from '../../common/components';
 import config from '../../common/constant';
-import { toStringFormat } from '../../common/helpers';
 import useFetch from '../../common/hooks/useFetch';
 import { setHotels } from '../destination/destinationsSlice';
+import { toStringFormat } from '../../common/helpers';
+import { CustomInput } from '../../common/components';
 
 export default function MyAutocompleteInput() {
   const dispatch = useDispatch();
