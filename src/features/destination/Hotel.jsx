@@ -6,6 +6,7 @@ import { Label, MyText } from '../../common/components';
 
 export default function Hotel({ image, city, rating, name, price }) {
   const navigation = useNavigation();
+
   const goToDetailScreen = () => {
     const params = { id: 1, image, city, rating, name, price };
 

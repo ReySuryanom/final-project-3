@@ -13,16 +13,22 @@ import { CustomInput } from '../../common/components';
 export default function MyAutocompleteInput() {
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
+  const [hideResults, setHideResults] = useState(false);
   const inputQuery = useMemo(() => config(query), [query]);
   const { data } = useFetch(inputQuery);
 
+  const eventHandler = useCallback((item) => {
+    setQuery(toStringFormat(item.caption).join(','));
+    setHideResults(true);
+  }, []);
+
   const renderSugesstions = useCallback(
     ({ item }) => (
-      <TouchableOpacity onPress={() => dispatch(setHotels({}))}>
+      <TouchableOpacity onPress={() => eventHandler(item)}>
         <SugesstionItem list={toStringFormat(item.caption)} />
       </TouchableOpacity>
     ),
-    [dispatch]
+    [eventHandler]
   );
 
   return (
@@ -35,6 +41,7 @@ export default function MyAutocompleteInput() {
         data={data}
         value={query}
         onChangeText={(text) => setQuery(text)}
+        hideResults={hideResults}
         flatListProps={{
           keyExtractor: (key) => key.destinationId,
           renderItem: renderSugesstions,

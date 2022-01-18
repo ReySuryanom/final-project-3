@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
-import { Text, View } from 'react-native';
 import store from './src/app/store';
 import { initializeTabBarIcon, ubuntuFonts } from './src/common/helpers';
 import {
@@ -27,18 +26,6 @@ export default function App() {
     <Provider store={store}>
       <NavigationContainer>
         <SafeAreaProvider>
-          <View>
-            <Text>F</Text>
-          </View>
-          {/* <Stack.Navigator
-            screenOptions={{
-              headerStyle: { backgroundColor: '#2C9CDB' },
-              headerTintColor: 'white',
-            }}
-          >
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
-            <Stack.Screen name="SearchResultScreen" component={SearchResultScreen} />
-          </Stack.Navigator> */}
           <Tab.Navigator screenOptions={initializeTabBarIcon}>
             <Tab.Screen name="HomeTab" component={HomeStackScreen} />
             <Tab.Screen name="FavoriteTab" component={FavoriteStackScreen} />
