@@ -2,19 +2,33 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   city: null,
-  date: { checkIn: null, checkOut: null },
+  checkIn: null,
+  checkOut: null,
   guests: null,
+  showSearch: true,
 };
 
 export const searchSlice = createSlice({
   name: 'search',
   initialState,
   reducers: {
-    postSearch: (state, action) => {
-      state = action;
+    setCity: (state, action) => {
+      state.city = action.payload;
+    },
+    setCheckIn: (state, action) => {
+      state.checkIn = action.payload;
+    },
+    setCheckOut: (state, action) => {
+      state.checkOut = action.payload;
+    },
+    setGuests: (state, action) => {
+      state.guests = action.payload;
+    },
+    toggleSearch: (state) => {
+      state.showSearch = !state.showSearch;
     },
   },
 });
 
-export const { userLogin } = searchSlice.actions;
+export const { setCity, setCheckIn, setGuests, setCheckOut, toggleSearch } = searchSlice.actions;
 export default searchSlice.reducer;

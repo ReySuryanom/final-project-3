@@ -6,21 +6,26 @@ import { useDispatch } from 'react-redux';
 import SugesstionItem from './SugesstionItem';
 import config from '../../common/constant';
 import useFetch from '../../common/hooks/useFetch';
-import { setHotels } from '../destination/destinationsSlice';
 import { toStringFormat } from '../../common/helpers';
 import { CustomInput } from '../../common/components';
+import { setCity } from './searchSlice';
 
 export default function MyAutocompleteInput() {
   const dispatch = useDispatch();
   const [query, setQuery] = useState('');
   const [hideResults, setHideResults] = useState(false);
-  const inputQuery = useMemo(() => config(query), [query]);
+  const inputQuery = useMemo(() => config({ query }), [query]);
   const { data } = useFetch(inputQuery);
 
-  const eventHandler = useCallback((item) => {
-    setQuery(toStringFormat(item.caption).join(','));
-    setHideResults(true);
-  }, []);
+  const eventHandler = useCallback(
+    (item) => {
+      const fullCity = toStringFormat(item.caption).join(',');
+      setQuery(fullCity);
+      dispatch(setCity(item.destinationId));
+      setHideResults(true);
+    },
+    [dispatch]
+  );
 
   const renderSugesstions = useCallback(
     ({ item }) => (
