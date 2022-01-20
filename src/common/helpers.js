@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-filename-extension */
 /* eslint-disable global-require */
 import { Icon } from 'react-native-elements';
-import { CustomHeader } from './components';
+import CustomHeader from './components/CustomHeader';
 
 export const ubuntuFonts = {
   'ubuntu-light': require('../assets/fonts/Ubuntu-Light.ttf'),
@@ -9,6 +9,8 @@ export const ubuntuFonts = {
   'ubuntu-medium': require('../assets/fonts/Ubuntu-Medium.ttf'),
   'ubuntu-bold': require('../assets/fonts/Ubuntu-Bold.ttf'),
 };
+
+export const trim = (text, length) => (text ? text.substring(0, length) : text);
 
 export const toStringFormat = (html) => {
   const headTag = "<span class='highlighted'>";
@@ -18,6 +20,20 @@ export const toStringFormat = (html) => {
 };
 
 export const headerRight = () => <CustomHeader />;
+
+export const formatText = (text) => text.replaceAll('/', '-');
+
+export const formatDate = (text) => {
+  const arrText = text.split('/');
+  const plainDate = new Date(arrText[0], arrText[1] - 1, arrText[2]);
+  const formattedDate = plainDate.toDateString('en-us', {
+    day: 'numeric',
+    month: 'short',
+    year: '2-digit',
+  });
+
+  return formattedDate;
+};
 
 export const initializeTabBarIcon = ({ route }) => ({
   tabBarIcon: ({ focused, color }) => {
