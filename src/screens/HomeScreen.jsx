@@ -2,6 +2,7 @@ import tw from 'twrnc';
 import { ScrollView, View } from 'react-native';
 import { SearchFormInput } from '../features/search';
 import { Destinations } from '../features/destination';
+import { popularDestinatons, topDestinatons } from '../common/constant';
 
 export default function HomeScreen() {
   return (
@@ -9,8 +10,8 @@ export default function HomeScreen() {
       <View style={{ flex: 0.965 }}>
         <SearchFormInput searchButton />
         <ScrollView>
-          <Destinations category="Top" />
-          <Destinations category="Popular" />
+          <Destinations category="Top" data={topDestinatons} />
+          <Destinations category="Popular" data={popularDestinatons} />
         </ScrollView>
       </View>
     </View>
