@@ -6,35 +6,9 @@ import { MyText, Separator } from '../common/components';
 import { Hotel } from '../features/destination';
 import LoginScreen from './LoginScreen';
 
-const data = [
-  {
-    id: 1,
-    img: 'https://exp.cdn-hotels.com/hotels/23000000/22580000/22575700/22575611/29fa5a77_z.jpg?impolicy=fcrop&w=250&h=140&q=high',
-    city: 'Jakarta',
-    rating: 4.5,
-    name: 'Alila SCBD',
-    price: 290,
-  },
-  {
-    id: 2,
-    img: 'https://exp.cdn-hotels.com/hotels/23000000/22580000/22575700/22575611/29fa5a77_z.jpg?impolicy=fcrop&w=250&h=140&q=high',
-    city: 'Jakarta',
-    rating: 4.5,
-    name: 'Alila SCBD',
-    price: 290,
-  },
-  {
-    id: 3,
-    img: 'https://exp.cdn-hotels.com/hotels/23000000/22580000/22575700/22575611/29fa5a77_z.jpg?impolicy=fcrop&w=250&h=140&q=high',
-    city: 'Jakarta',
-    rating: 4.5,
-    name: 'Alila SCBD',
-    price: 290,
-  },
-];
-
 export default function BookingHistoryScreen() {
   const { isUserLoggedIn, user } = useSelector((state) => state.auth);
+  const { bookedHotels, favHotels } = useSelector((state) => state.hotel);
 
   if (!isUserLoggedIn) {
     return <LoginScreen />;
@@ -59,7 +33,7 @@ export default function BookingHistoryScreen() {
               Bookings
             </MyText>
             <MyText style="text-[#2C9CDB] text-xl" variant="medium">
-              2
+              {bookedHotels.length}
             </MyText>
           </View>
           <View style={tw`items-center`}>
@@ -67,20 +41,21 @@ export default function BookingHistoryScreen() {
               Favorites
             </MyText>
             <MyText style="text-[#2C9CDB] text-xl" variant="medium">
-              2
+              {favHotels.length}
             </MyText>
           </View>
         </View>
       </View>
       <FlatList
-        data={data}
+        data={bookedHotels}
         style={tw.style(`mt-5`, { overflow: 'visible' })}
         // eslint-disable-next-line react/no-unstable-nested-components
         ItemSeparatorComponent={() => <Separator vertical />}
         renderItem={({ item }) => (
           <Hotel
-            image={item.img}
+            image={item.image}
             city={item.city}
+            country={item.country}
             rating={item.rating}
             name={item.name}
             price={item.price}
