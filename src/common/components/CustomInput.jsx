@@ -1,10 +1,13 @@
 import tw from 'twrnc';
-import { useState } from 'react';
-import DatePicker, { getToday } from 'react-native-modern-datepicker';
+import { useCallback, useState } from 'react';
+import DatePicker, { getFormatedDate } from 'react-native-modern-datepicker';
 import { View, TextInput } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { useDispatch } from 'react-redux';
 import MyText from './MyText';
 import MyDatePicker from './MyDatePicker';
+import { formatDate } from '../helpers';
+import { setCheckIn, setCheckOut } from '../../features/search/searchSlice';
 
 export default function CustomInput({
   value,
@@ -20,12 +23,22 @@ export default function CustomInput({
   type = 'default',
 }) {
   const [open, setOpen] = useState('hidden');
+  const dispatch = useDispatch();
 
-  const eventHandler = (data) => {
-    setValue(data);
-    setOpen('hidden');
-  };
+  const eventHandler = useCallback(
+    (data) => {
+      const formattedDate = getFormatedDate(new Date(data), 'YYYY-MM-DD');
+      setValue(formatDate(data));
 
+      if (label.includes('-in')) {
+        dispatch(setCheckIn(formattedDate));
+      } else {
+        dispatch(setCheckOut(formattedDate));
+      }
+      setOpen('hidden');
+    },
+    [setValue, label, dispatch]
+  );
   return (
     <>
       <View style={{ marginVertical: 5, ...style }}>
