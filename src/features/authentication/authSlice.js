@@ -1,16 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  // isUserLoggedIn: false,
-  // user: null,
-  isUserLoggedIn: true,
-  user: {
-    firstName: 'Admin',
-    lastName: 'Admin',
-    gender: 'male',
-    email: 'admin@gmail.com',
-    level: 'admin',
-  },
+  isUserLoggedIn: false,
+  user: null,
+
+  /* Untuk DEMO */
+  // isUserLoggedIn: true,
+  // user: {
+  //   firstName: 'Admin',
+  //   lastName: 'Admin',
+  //   gender: 'male',
+  //   email: 'admin@gmail.com',
+  //   level: 'admin',
+  // },
 };
 
 export const authSlice = createSlice({
